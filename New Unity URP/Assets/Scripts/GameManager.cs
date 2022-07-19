@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(locationToLoad, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync(locationToLoad, LoadSceneMode.Additive).completed += operation =>
         {
-            Vector3 startPosition = gameObject.Find("PlayerStart").transform.position;
+            Vector3 startPosition = GameObject.Find("PlayerStart").transform.position;
             
             Instantiate(playerAndCameraPrefab, startPosition, Quaternion.identity);
         };
