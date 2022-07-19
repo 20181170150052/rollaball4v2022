@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 {
    public int coins = 0;
 
-   public TMP_Text coinText;
+   //public TMP_Text coinText;  DELETADO
 
 
    public float moveSpeed;
@@ -157,7 +157,10 @@ public class PlayerController : MonoBehaviour
       if (other.CompareTag("Coin"))
       {
          coins++;
-         coinText.text = coins.ToString();
+         PlayerObserverManager.PlayerCoinsChanged(coins);
+         
+         //coinText.text = coins.ToString(); DELETADO
+         
          Destroy((other.gameObject));
       }
    }

@@ -1,18 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerObserverManager : MonoBehaviour
+// Esse seria o nosso YouTube com coisas do jogador.
+public static class PlayerObserverManager
 {
-    // Start is called before the first frame update
-    void Start()
+    //Essa aqui vai ser o nosso canal para atualização da qaurtidade de coins do jogador.
+    public static Action<int> OnPlayerCoinsChanged;
+    
+    // A segunda parte é cpomo o player notificar seus inscritos que as moedas mudaram.
+    public static void PlayerCoinsChanged(int value)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OnPlayerCoinsChanged?.Invoke(value);
     }
 }

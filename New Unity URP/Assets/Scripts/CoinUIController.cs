@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CoinUIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TMP_Text coinText;
+
+    private void OnEnable()
     {
-        
+        PlayerObserverManager.OnPlayerCoinsChanged += UpdateCoinText;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        PlayerObserverManager.OnPlayerCoinsChanged -= UpdateCoinText;
+    }
+
+    private void UpdateCoinText(int coins)
+    {
+        coinText.text = coins.ToString();
     }
 }
+
+
+
