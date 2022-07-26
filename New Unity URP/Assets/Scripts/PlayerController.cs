@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 {
    public int coins = 0;
 
+   public int ColetarNvObj = 0;
+   
    //public TMP_Text coinText;  DELETADO
 
 
@@ -162,6 +164,15 @@ public class PlayerController : MonoBehaviour
          //coinText.text = coins.ToString(); DELETADO
          
          Destroy((other.gameObject));
+      }
+   }
+
+   private void OnTriggerEnter2D(Collider2D other)
+   {
+      if (other.CompareTag("Coletar"))
+      {
+         ColetarNvObj++;
+         Destroy(other.gameObject);
       }
    }
 }
