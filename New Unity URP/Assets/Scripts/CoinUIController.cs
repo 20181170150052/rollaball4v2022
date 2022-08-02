@@ -7,7 +7,7 @@ using UnityEngine;
 public class CoinUIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text coinText;
-
+     
     private void OnEnable()
     {
         PlayerObserverManager.OnPlayerCoinsChanged += UpdateCoinText;
@@ -22,6 +22,8 @@ public class CoinUIController : MonoBehaviour
     {
         coinText.text = coins.ToString();
     }
+    
+    
 }
 
 
