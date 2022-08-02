@@ -22,9 +22,4 @@ public class CoinUIController : MonoBehaviour
     {
         coinText.text = coins.ToString();
     }
-    
-    
 }
-
-
-

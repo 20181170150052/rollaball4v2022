@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,9 +18,9 @@ public class OBUIController : MonoBehaviour
         PlayerObserverManager.OnPlayerColetarChanged -= UpdateOBText;
     }
 
-    private void UpdateOBText(int Coletar)
+    private void UpdateOBText(int ColetarNvObj)
     {
-        OBText.text = Coletar.ToString();
+        OBText.text = ColetarNvObj.ToString();
     }
     
     

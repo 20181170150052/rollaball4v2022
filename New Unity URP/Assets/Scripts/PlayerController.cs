@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
    public int ColetarNvObj = 0;
    
-   //public TMP_Text coinText;  DELETADO
+      //public TMP_Text coinText;  DELETADO
 
 
    public float moveSpeed;
@@ -163,17 +163,16 @@ public class PlayerController : MonoBehaviour
          
          //coinText.text = coins.ToString(); DELETADO
          
-         Destroy((other.gameObject));
+         Destroy(other.gameObject);
       }
-   }
 
-   private void OnTriggerEnter2D(Collider2D other)
-   {
       if (other.CompareTag("Coletar"))
       {
          ColetarNvObj++;
+         PlayerObserverManager.PlayerColetarChanged(ColetarNvObj);
          Destroy(other.gameObject);
       }
+      
    }
 }
 
